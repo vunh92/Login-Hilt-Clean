@@ -1,36 +1,29 @@
-package com.vunh.login_hilt_clean.viewModel
+package com.vunh.login_hilt_clean.presentation.login
 
-import android.text.Editable
-import android.text.TextWatcher
-import android.util.Log
-import android.view.View
-import android.widget.Toast
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.vunh.login_hilt_clean.model.Account
-import com.vunh.login_hilt_clean.repository.login.LoginRepositoryImpl
-import com.vunh.login_hilt_clean.usecase.UseCaseResult
-import com.vunh.login_hilt_clean.users.UserManager
+import com.vunh.login_hilt_clean.domain.entity.AccountEntity
+import com.vunh.login_hilt_clean.data.repositories.LoginRepositoryImpl
+import com.vunh.login_hilt_clean.domain.usecase.LoginUseCase
+import com.vunh.login_hilt_clean.utils.UseCaseResult
 import com.vunh.login_hilt_clean.utils.AppUtils.validateEmail
+import com.vunh.login_hilt_clean.utils.UserManager
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.*
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 import javax.inject.Inject
 import kotlin.coroutines.CoroutineContext
 
 @HiltViewModel
 class LoginViewModel @Inject constructor(
-    private val loginRepositoryImp: LoginRepositoryImpl,
     private val userManager: UserManager,
+    private val loginUseCase: LoginUseCase,
     ) : ViewModel() , CoroutineScope {
     private val job = Job()
     override val coroutineContext: CoroutineContext = Dispatchers.Main + job
 
     val showLoading = MutableLiveData<Boolean>()
     val showError = MutableLiveData<String>()
-    val userResult= MutableLiveData<Account>()
+    val userResult= MutableLiveData<AccountEntity>()
 
     override fun onCleared() {
         super.onCleared()
@@ -42,7 +35,7 @@ class LoginViewModel @Inject constructor(
         launch {
             try {
                 var result = withContext(Dispatchers.IO) {
-                    loginRepositoryImp.getUser(username, password)
+                    loginUseCase.invoke(username, password)
                 }
                 showLoading.value = false
                 when (result) {

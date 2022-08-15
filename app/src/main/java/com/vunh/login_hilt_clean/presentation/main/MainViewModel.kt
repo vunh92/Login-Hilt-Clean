@@ -1,8 +1,8 @@
-package com.vunh.login_hilt_clean.viewModel
+package com.vunh.login_hilt_clean.presentation.main
 
 import androidx.lifecycle.ViewModel
-import com.vunh.login_hilt_clean.repository.login.LoginRepositoryImpl
-import com.vunh.login_hilt_clean.users.UserManager
+import com.vunh.login_hilt_clean.data.repositories.LoginRepositoryImpl
+import com.vunh.login_hilt_clean.utils.UserManager
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers

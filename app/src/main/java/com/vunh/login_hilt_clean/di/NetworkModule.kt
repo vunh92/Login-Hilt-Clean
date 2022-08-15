@@ -1,7 +1,6 @@
 package com.vunh.login_hilt_clean.di
 
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
-import com.vunh.login_hilt_clean.api.LoginService
 import com.vunh.login_hilt_clean.utils.AppUtils
 import dagger.Module
 import dagger.Provides
@@ -9,12 +8,11 @@ import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import javax.inject.Qualifier
 import javax.inject.Singleton
 
 @InstallIn(SingletonComponent::class)
 @Module
-class NetworkModule {
+object NetworkModule {
 
 //    @BackendRetrofit
     @Singleton

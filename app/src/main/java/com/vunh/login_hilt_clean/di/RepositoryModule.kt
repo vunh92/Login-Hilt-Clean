@@ -1,7 +1,7 @@
 package com.vunh.login_hilt_clean.di
 
-import com.vunh.login_hilt_clean.repository.login.LoginRepository
-import com.vunh.login_hilt_clean.repository.login.LoginRepositoryImpl
+import com.vunh.login_hilt_clean.domain.repositories.LoginRepository
+import com.vunh.login_hilt_clean.data.repositories.LoginRepositoryImpl
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn

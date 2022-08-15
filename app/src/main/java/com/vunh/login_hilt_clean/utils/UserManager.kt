@@ -1,6 +1,6 @@
-package com.vunh.login_hilt_clean.users
+package com.vunh.login_hilt_clean.utils
 
-import com.vunh.login_hilt_clean.storage.Storage
+import com.vunh.login_hilt_clean.data.storage.Storage
 import javax.inject.Inject
 import javax.inject.Singleton
 

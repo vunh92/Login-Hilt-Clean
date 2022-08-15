@@ -1,7 +1,7 @@
 package com.vunh.login_hilt_clean.di
 
-import com.vunh.login_hilt_clean.storage.SharedPreferencesStorage
-import com.vunh.login_hilt_clean.storage.Storage
+import com.vunh.login_hilt_clean.data.storage.SharedPreferencesStorage
+import com.vunh.login_hilt_clean.data.storage.Storage
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn

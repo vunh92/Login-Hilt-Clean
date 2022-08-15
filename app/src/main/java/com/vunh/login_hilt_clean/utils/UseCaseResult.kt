@@ -1,6 +1,4 @@
-package com.vunh.login_hilt_clean.usecase
-
-import com.google.gson.annotations.SerializedName
+package com.vunh.login_hilt_clean.utils
 
 sealed class UseCaseResult<out T : Any> {
     class Success<out T : Any>(val data: T) : UseCaseResult<T>()

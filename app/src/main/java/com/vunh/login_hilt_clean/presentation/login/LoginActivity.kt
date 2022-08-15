@@ -1,4 +1,4 @@
-package com.vunh.login_hilt_clean.view
+package com.vunh.login_hilt_clean.presentation.login
 
 import android.content.Context
 import android.content.Intent
@@ -7,16 +7,13 @@ import android.os.Bundle
 import android.view.View
 import androidx.activity.viewModels
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.snackbar.Snackbar
-import com.vunh.login_hilt_clean.BaseApp
 import com.vunh.login_hilt_clean.databinding.ActivityLoginBinding
+import com.vunh.login_hilt_clean.presentation.main.MainActivity
 import com.vunh.login_hilt_clean.utils.AppUtils.afterTextChanged
 import com.vunh.login_hilt_clean.utils.AppUtils.isEnable
 import com.vunh.login_hilt_clean.utils.AppUtils.validateEmail
-import com.vunh.login_hilt_clean.viewModel.LoginViewModel
 import dagger.hilt.android.AndroidEntryPoint
-import javax.inject.Inject
 
 @AndroidEntryPoint
 class LoginActivity : AppCompatActivity() {

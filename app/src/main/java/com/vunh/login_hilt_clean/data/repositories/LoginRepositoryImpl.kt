@@ -1,14 +1,16 @@
-package com.vunh.login_hilt_clean.repository.login
+package com.vunh.login_hilt_clean.data.repositories
 
 import com.vunh.login_hilt_clean.api.LoginService
-import com.vunh.login_hilt_clean.model.Account
-import com.vunh.login_hilt_clean.usecase.UseCaseResult
+import com.vunh.login_hilt_clean.domain.entity.AccountEntity
+import com.vunh.login_hilt_clean.domain.repositories.LoginRepository
+import com.vunh.login_hilt_clean.utils.UseCaseResult
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
-class LoginRepositoryImpl @Inject constructor(private val loginService: LoginService) : LoginRepository {
-    override suspend fun getUser(username: String, password: String): UseCaseResult<Account> {
+class LoginRepositoryImpl @Inject constructor(private val loginService: LoginService) :
+    LoginRepository {
+    override suspend fun getUser(username: String, password: String): UseCaseResult<AccountEntity> {
         return try {
             val result =
                 withContext(Dispatchers.IO) { loginService.callLoginAsync(username, password).await() }

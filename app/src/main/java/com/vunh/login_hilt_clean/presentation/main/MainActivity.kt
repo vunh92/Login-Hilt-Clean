@@ -1,14 +1,12 @@
-package com.vunh.login_hilt_clean.view
+package com.vunh.login_hilt_clean.presentation.main
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
-import androidx.lifecycle.ViewModelProvider
-import com.vunh.login_hilt_clean.BaseApp
 import com.vunh.login_hilt_clean.databinding.ActivityMainBinding
-import com.vunh.login_hilt_clean.users.UserManager
-import com.vunh.login_hilt_clean.viewModel.MainViewModel
+import com.vunh.login_hilt_clean.presentation.login.LoginActivity
+import com.vunh.login_hilt_clean.utils.UserManager
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 

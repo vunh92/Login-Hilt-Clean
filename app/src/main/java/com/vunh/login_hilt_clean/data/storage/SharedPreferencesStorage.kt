@@ -1,4 +1,4 @@
-package com.vunh.login_hilt_clean.storage
+package com.vunh.login_hilt_clean.data.storage
 
 import android.content.Context
 import dagger.hilt.android.qualifiers.ApplicationContext
